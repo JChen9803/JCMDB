@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/userInfo.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="navbar">
+            <ul>
+                <li id="home"> <a href="index.html">JCMDB</a></li>
+                <li id="editProfile" data-toggle="modal" data-target="#editProfileModal">Edit Profile</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileTitle">What Information Would You Like To Change?
+                        <button type="button" class="close" id="closeUserModal" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="movieForm">
+                        <div class="form-group">
+                            <label for="inputUsername">Name</label>
+                            <input type="text" class="form-control" id="inputUsername">
+                        </div>
+                        <div class="form-group">
+                                <label for="inputAge">Age</label>
+                                <input type="text" class="form-control" id="inputAge">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputFavMovie">Favorite Movie</label>
+                            <input type="text" class="form-control" id="inputFavMovie">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputFavStar">Favorite Movie Star</label>
+                            <input type="text" class="form-control" id="inputFavStar">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputBlurb">Profile Bio</label>
+                            <textarea type="textarea" class="form-control" id="inputBlurb"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" onclick="updateUserInfo()">Submit</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-success alert-dismissible fade in" id="updateProfileSuccessMessage">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        Profile information successfully updated!
+    </div>
+
+    <div class="row">
+        <div class="column left">
+            <img class="profilePic" src="dog.JPG" alt="name">
+        </div>
+        <div class="column right">
+            <h1 id="name">Niu Niu</h1>
+            <h3><b>Age:</b> <span id="age">10</span></h3>
+            <h3><b>Favorite Movie:</b> <span id="favMovie">Movie Name</span></h3>
+            <h3><b>Favorite Movie Star:</b> <span id="favStar">Movie Star</span></h3>
+            <h3 id="userBlurb">I am doggo that does movie review. Am very good, trust my reviews.</h3></h2>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button class="tablinks" onclick="openList(reviewed)" id="defaultOpen">Reviewed Movies</button>
+        <button class="tablinks" onclick="openList(saved)">Saved Movies</button>
+        <button class="tablinks" onclick="openList(created)">Movie Entries</button>
+        <button type="buttton" id="entry" data-toggle="modal" data-target="#createEntryModal">Add Movie Entry</button>
+    </div>
+    <div id="test"></div>
+
+    <!-- Create Movie Entry Modal -->
+    <div class="modal fade" id="createEntryModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add a New Movie Entry!
+                        <button type="button" class="close" id="closeMovieModal" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="movieForm">
+                        <div class="form-group">
+                            <label for="inputMovieTitle">Movie Title</label>
+                            <input type="text" class="form-control" id="inputMovieTitle" placeholder="Movie Title">
+                            <div class="invalid-feedback" id="movieTitleError">
+                                Please enter a movie title
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputYear">Year Released</label>
+                                <input type="text" class="form-control" id="inputYear" placeholder="Year">
+                                <div class="invalid-feedback" id="yearError">
+                                    Please enter a valid year
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="inputGenre">Genre</label>
+                                <select id="inputGenre" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>Action</option>
+                                    <option>Adventure</option>
+                                    <option>Animation</option>
+                                    <option>Comedy</option>
+                                    <option>Documentary</option>
+                                    <option>Drama</option>
+                                    <option>Family</option>
+                                    <option>Horror</option>
+                                    <option>LGBTQ+</option>
+                                    <option>Romance</option>
+                                    <option>Thriller</option>
+                                </select>
+                                <div class="invalid-feedback" id="genreError">
+                                    Please choose a genre
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="inputActors">Notable Actors/Actresses</label>
+                            <input type="text" class="form-control" id="inputActors" placeholder="Enter Notable Actors/Atresses">
+                            <div class="invalid-feedback" id="actorError">
+                                Please enter actor(s)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDirectors">Directors</label>
+                            <input type="text" class="form-control" id="inputDirectors" placeholder="Enter Directors">
+                            <div class="invalid-feedback" id="directorError">
+                                Please enter director(s)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSummary">Movie Summary</label>
+                            <textarea type="textarea" class="form-control" id="inputSummary" placeholder="Please enter a brief summary of the movie"></textarea>
+                            <div class="invalid-feedback" id="summaryError">
+                                Please enter a brief summary
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetMovieModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" onclick="movieValidation()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
