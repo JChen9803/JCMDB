@@ -1,10 +1,10 @@
 function checkLogin(info){
 		if(info.user.value == "student" &&info.pass.value=="password"){
-			document.getElementById("home").click();
+			location.href="user.html"
 
 		}
 		else{
-			alert("Incorrect userName or password");
+			alert("fail");
 		}
 }
 

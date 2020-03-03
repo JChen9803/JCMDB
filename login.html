@@ -76,10 +76,20 @@
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         New Account Successfully created!
     </div>
+	
+	<div class="alert alert-error collapse" id="LoginErrorMessage">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        Username or Password is incorrect
+    </div>
+	
+	<div class="alert alert-success collapse" id="LoginSuccessMessage">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        Login Successful
+    </div>
 
     <div>
         <div class = "container">
-		<form name="login">
+		<form name="login" action="user.html">
 			<div class= "form-group">
 					<label>Username:</label>
 					<input type="text" class="form-control" name= "user">
@@ -89,7 +99,7 @@
 				<input type="text" class="form-control" name= "pass">
 			</div>
 			
-			<button class="btn btn-primary" onclick="checkLogin(this.form)">Log In</button>
+			<button class="btn btn-primary" onclick="checkLogin(this.form);">Log In</button>
 		</form>
 			<button class="btn btn-secondary" id="entry" data-toggle="modal" data-target="#createAccount">Create Account</button>
 
