@@ -162,3 +162,22 @@ ul {
     background: none;
     border: none;
 }
+
+.movieHomePage {
+    margin: 1% 20%;
+}
+
+.movieHomePage .row {
+    border: solid lightblue;
+    border-radius: 20px;
+    margin-bottom: 2%;
+}
+.moviePic {
+    width: 125px;
+    height: 200px;
+    border: 3px solid;
+}
+
+.movieBlurb {
+    padding-right: 1%;
+}
