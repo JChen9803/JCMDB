@@ -5,13 +5,16 @@
     <title>User Page</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/userInfo.js"></script>
+
 </head>
 
 <body>
+    <!-- Navbar -->
     <div class="top">
         <div class="navbar">
             <ul>
@@ -20,6 +23,7 @@
             </ul>
         </div>
     </div>
+
     <!-- Edit Profile Modal -->
     <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -65,11 +69,17 @@
         </div>
     </div>
 
+    <!-- Success Message for updating profile and creating movie entry -->
     <div class="alert alert-success alert-dismissible fade in" id="updateProfileSuccessMessage">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         Profile information successfully updated!
     </div>
+    <div class="alert alert-success alert-dismissible fade in" id="createMovieSuccessMessage">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        Movie entry successfully created!
+    </div>
 
+    <!-- Profile Section -->
     <div class="row">
         <div class="column left">
             <img class="profilePic" src="dog.JPG" alt="name">
@@ -83,13 +93,13 @@
         </div>
     </div>
 
+    <!-- Movie Section -->
     <div class="tabs">
         <button class="tablinks" onclick="openList(reviewed)" id="defaultOpen">Reviewed Movies</button>
         <button class="tablinks" onclick="openList(saved)">Saved Movies</button>
         <button class="tablinks" onclick="openList(created)">Movie Entries</button>
         <button type="buttton" id="entry" data-toggle="modal" data-target="#createEntryModal">Add Movie Entry</button>
     </div>
-    <div id="test"></div>
 
     <!-- Create Movie Entry Modal -->
     <div class="modal fade" id="createEntryModal" tabindex="-1" role="dialog" aria-hidden="true">

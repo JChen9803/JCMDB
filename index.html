@@ -5,8 +5,14 @@
     <title>JCMDB</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
+    <!-- Main Top Section of Homepage -->
     <div class="top">
         <div class="navbar">
             <ul>
@@ -26,6 +32,23 @@
         <script src="js/main.js"></script>
     </div>
 
+    <!-- Message, Filter, Sort -->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div id="message" class="col-md-5">
+            Find information and reviews on any movie!
+        </div>
+        <div id="filter-sort" class="col-md-4">
+            Sort by:
+            <select id="inputSort">
+                <option selected>Newest</option>
+                <option>Rating</option>
+            </select>
+            &nbsp <button id="filterBtn" type="submit"><i class="fa fa-filter"></i>Filter</button>
+        </div>
+    </div>
+
+    <!-- List of Movies -->
     <div>
         <table id="movies">
 

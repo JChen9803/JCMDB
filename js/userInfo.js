@@ -16,8 +16,7 @@ function updateUserInfo() {
     document.getElementById("userBlurb").innerText = document.getElementById("inputBlurb").value;
     document.getElementById("closeUserModal").click();
     document.getElementById("updateProfileSuccessMessage").style.display = "block";
-
-    $("#closeUserModal").click(function(){
-        $("#updateProfileSuccessMessage").fadeOut();
-    });
+    setTimeout(function() {
+        document.getElementById("updateProfileSuccessMessage").style.display = "none";
+    }, 4000);
 }

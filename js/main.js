@@ -6,6 +6,7 @@ function movieValidation() {
     var directors = document.getElementById("inputDirectors").value;
     var summary = document.getElementById("inputSummary").value;
 
+    console.log("year" + year.length)
     let valid = true;
 
     if(movieTitle == "") {
@@ -18,8 +19,8 @@ function movieValidation() {
         document.getElementById("movieTitleError").style.visibility = "hidden";
     }
 
-    let pat = /[0-9]{4}/;
-    if(year == "" || !pat.test(year)) {
+    let pat = /[0-9]/;
+    if(year == "" || year.length != 4 || !pat.test(year)) {
         valid = false;
         document.getElementById("inputYear").style.borderColor = "red";
         document.getElementById("yearError").style.visibility = "visible";
@@ -70,7 +71,11 @@ function movieValidation() {
     }
 
     if (valid) {
-
+        document.getElementById("closeMovieModal").click();
+        document.getElementById("createMovieSuccessMessage").style.display = "block";
+        setTimeout(function() {
+            document.getElementById("createMovieSuccessMessage").style.display = "none";
+        }, 4000);
     }
 
 }
