@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JCMDB</title>
+    <link rel="stylesheet" href="css/style.css">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/userInfo.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="top">
+        <div class="navbar">
+            <ul>
+				<li id="home"> <a href="index.html">JCMDB</a></li>
+            </ul>
+        </div>
+    </div>
+	
+	
+	<div class="modal fade" id="createAccount" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a new Account
+                        <button type="button" class="close" id="closeAccountModal" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="movieForm">
+                        <div class="form-group">
+                            <label for="inputName">Name</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                            <div class="invalid-feedback" id="nameError">
+                                Please enter your full name
+                            </div>
+                        </div>
+						<div class="form-group">
+							<label for="inputUsername">Username</label>
+							<input type="text" class="form-control" id="inputUsername" placeholder="username">
+							<div class="invalid-feedback" id="usernameError">
+								Please enter a valid username
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="inputPassword1">Password (Minimum 8 Characters)</label>
+							<input type="password" class="form-control" id="inputPassword1" placeholder="password" minlength="8" required>
+							<div class="invalid-feedback" id="password1Error">
+								Please input a valid password
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword2">Confirm Password (Minimum 8 Characters)</label>
+							<input type="password" class="form-control" id="inputPassword2" placeholder="password" minlength="8" required>
+							<div class="invalid-feedback" id="password2Error">
+								Please ensure passwords are the same
+							</div>
+						</div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetAccountModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" onclick="accountValidation()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="alert alert-success collapse" id="createAccountSuccessMessage">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        New Account Successfully created!
+    </div>
+
+    <div>
+        <div class = "container">
+		<form name="login">
+			<div class= "form-group">
+					<label>Username:</label>
+					<input type="text" class="form-control" name= "user">
+			</div>
+			<div class= "form-group">
+				<label>Password:</label>
+				<input type="text" class="form-control" name= "pass">
+			</div>
+			
+			<button class="btn btn-primary" onclick="checkLogin(this.form)">Log In</button>
+		</form>
+			<button class="btn btn-secondary" id="entry" data-toggle="modal" data-target="#createAccount">Create Account</button>
+
+		</div>
+    </div>
+
+	
+
+
+</body>
+</html>
