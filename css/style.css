@@ -32,14 +32,14 @@ ul {
     cursor: pointer;
 }
 
-#signup, #editProfile {
+#signup, #editProfile, #editMovie {
     color: white;
     border-style: solid;
     background-color: green;
     border-radius: 20px;
 }
 
-#signup:hover, #editProfile:hover {
+#signup:hover, #editProfile:hover, #editMovie:hover {
     background-color: lightgreen;
     color: black;
     cursor: pointer;

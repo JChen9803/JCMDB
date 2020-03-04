@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/movieInfo.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="top">
+        <div class="navbar">
+            <ul>
+                <li id="home"> <a href="index.html">JCMDB</a></li>
+                <li id="editProfile" data-toggle="modal" data-target="#editMovieModal">Edit Movie</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editMovieModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editMovieTitle">What Information Would You Like To Change?
+                        <button type="button" class="close" id="closeUserModal" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <form class="movieForm">
+                        <div class="form-group">
+                            <label for="inputTitle">Title</label>
+                            <input type="text" class="form-control" id="inputTitle">
+                        </div>
+                        <div class="form-group">
+                                <label for="inputYear">Year</label>
+                                <input type="text" class="form-control" id="inputYear">
+                        </div>
+                        <div class="form-group">
+							<label for="inputGenre">Genre</label>
+							<select id="inputGenre" class="form-control">
+								<option selected>Choose...</option>
+								<option>Action</option>
+								<option>Adventure</option>
+								<option>Animation</option>
+								<option>Comedy</option>
+								<option>Documentary</option>
+								<option>Drama</option>
+								<option>Family</option>
+								<option>Horror</option>
+								<option>LGBTQ+</option>
+								<option>Romance</option>
+								<option>Thriller</option>
+							</select>
+							<div class="invalid-feedback" id="genreError">
+								Please choose a genre
+							</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDirector">Director</label>
+                            <input type="text" class="form-control" id="inputDirector">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSummary">Summary</label>
+                            <textarea type="textarea" class="form-control" id="inputSummary"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" onclick="updateMovieInfo()">Submit</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message for updating profile and creating movie entry -->
+    <div class="alert alert-success collapse" id="updateMovieSuccessMessage">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        Movie information successfully updated!
+    </div>
+
+    <!-- Profile Section -->
+    <div class="row">
+        <div class="column left">
+            <img class="moviePic" src="joker.JPG" alt="pic">
+        </div>
+        <div class="column right">
+            <h1 id="title">Joker</h1>
+            <h3><b>Year:</b> <span id="year">2019</span></h3>
+            <h3><b>Genre:</b> <span id="genre">Drama</span></h3>
+            <h3><b>Director:</b> <span id="director">Someone's name</span></h3>
+            <h3><b></b><span id="summary">Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.</span></h3>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
