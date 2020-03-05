@@ -1,3 +1,4 @@
+<!-- Jason Chen (jc4rn) and Cody Miller (cm2gp) -->
 window.onload = function() {
     document.getElementById("editProfile").onclick = function() {
         document.getElementById("inputTitle").value = document.getElementById("title").innerText;
