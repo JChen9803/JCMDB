@@ -1,3 +1,5 @@
+<!-- Jason Chen (jc4rn) and Cody Miller (cm2gp) -->
+
 window.onload = function() {
     document.getElementById("editProfile").onclick = function() {
         document.getElementById("inputUsername").value = document.getElementById("name").innerText;
@@ -6,6 +8,7 @@ window.onload = function() {
         document.getElementById("inputFavStar").value = document.getElementById("favStar").innerText;
         document.getElementById("inputBlurb").value = document.getElementById("userBlurb").innerText;
     };
+
 }
 
 function updateUserInfo() {
@@ -18,5 +21,5 @@ function updateUserInfo() {
     document.getElementById("updateProfileSuccessMessage").style.display = "block";
     setTimeout(function() {
         document.getElementById("updateProfileSuccessMessage").style.display = "none";
-    }, 4000);
+    }, 9000);
 }

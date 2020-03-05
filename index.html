@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Jason Chen (jc4rn) and Cody Miller (cm2gp) -->
+
     <meta charset="UTF-8">
     <title>JCMDB</title>
     <link rel="stylesheet" href="css/style.css">
@@ -8,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 
 
 </head>
@@ -22,13 +25,10 @@
         <h1 class="title">Jason and Cody's Movie Database</h1>
         <p class="subtitle">All movie reviews, all in one place!</p>
         <div class="searchbar">
-            <form>
-                <input type="text" placeholder="Search for movies" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+            <input type="text" placeholder="Search for movies" id="search">
+            <button type="submit" onclick="searchMovies()"><i class="fa fa-search"></i></button>
         </div>
 
-        <script src="js/main.js"></script>
     </div>
 
     <!-- Message, Filter, Sort -->
@@ -39,51 +39,127 @@
         </div>
         <div id="filter-sort" class="col-md-4">
             Sort by:
-            <select id="inputSort">
-                <option selected>Newest</option>
-                <option>Rating</option>
+            <select id="inputSort" name="sortBy">
+                <option value="newest" selected>Newest</option>
+                <option value="rating">Rating</option>
             </select>
             &nbsp <button id="filterBtn" type="submit"><i class="fa fa-filter"></i>Filter</button>
         </div>
     </div>
 
-    <!-- List of Movies -->
-    <div class="movieHomePage">
-        <div class="row">
+    <!-- List of Movies by Year-->
+    <div class="movieHomePage" id="sortNewest">
+        <div class="row sonicMovie">
+            <div class="column left">
+                <img class="moviePicThumbnail" src="sonic.JPG" alt="name">
+            </div>
+            <div class="column right">
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <a href="movie.html">
+                    <h3 class="movieName">Sonic (2020)</h3>
+                </a>
+                <h5><b>Genre:</b> <span class="movieGenre">Family</span></h5>
+                <h5 class="movieBlurb">Sonic tries to navigate the complexities of life on Earth with his newfound best friend -- a human named Tom Wachowski. They must soon join forces to prevent the evil Dr. Robotnik from capturing Sonic and using his powers for world domination.</h5>
+            </div>
+        </div>
+        <div class="row jokerMovie">
             <div class="column left">
 				<a href="movie.html">
-					<img class="moviePic" src="joker.JPG" alt="name" href="movie.html">
+					<img class="moviePicThumbnail" src="joker.JPG" alt="name" href="movie.html">
 				</a>
             </div>
             <div class="column right">
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
 				<a href="movie.html">
-					<h3 class="movieName" href="movie.html">Joker</h3>
+					<h3 class="movieName" href="movie.html">Joker (2019)</h3>
 				</a>
                 <h5><b>Genre:</b> <span class="movieGenre">Drama</span></h5>
                 <h5 class="movieBlurb">Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.</h5>
             </div>
         </div>
-        <div class="row">
+        <div class="row conjuringMovie">
             <div class="column left">
-                <img class="moviePic" src="sonic.JPG" alt="name">
+                <img class="moviePicThumbnail" src="conjuring.JPG" alt="name">
             </div>
             <div class="column right">
-                <h3 class="movieName">Sonic</h3>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star"></span>
+                <a href="movie.html">
+                    <h3 class="movieName">The Conjuring (2013)</h3>
+                </a>
+                <h5><b>Genre:</b> <span class="movieGenre">Horror</span></h5>
+                <h5 class="movieBlurb">Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- List of Movies by Rating-->
+    <div class="movieHomePage" id="sortRating">
+
+        <div class="row jokerMovie">
+            <div class="column left">
+                <a href="movie.html">
+                    <img class="moviePicThumbnail" src="joker.JPG" alt="name" href="movie.html">
+                </a>
+            </div>
+            <div class="column right">
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <a href="movie.html">
+                    <h3 class="movieName" href="movie.html">Joker (2019)</h3>
+                </a>
+                <h5><b>Genre:</b> <span class="movieGenre">Drama</span></h5>
+                <h5 class="movieBlurb">Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him. Isolated, bullied and disregarded by society, Fleck begins a slow descent into madness as he transforms into the criminal mastermind known as the Joker.</h5>
+            </div>
+        </div>
+        <div class="row conjuringMovie">
+            <div class="column left">
+                <img class="moviePicThumbnail" src="conjuring.JPG" alt="name">
+            </div>
+            <div class="column right">
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star"></span>
+                <a href="movie.html">
+                    <h3 class="movieName">The Conjuring (2013)</h3>
+                </a>
+                <h5><b>Genre:</b> <span class="movieGenre">Horror</span></h5>
+                <h5 class="movieBlurb">Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.</h5>
+            </div>
+        </div>
+        <div class="row sonicMovie">
+            <div class="column left">
+                <img class="moviePicThumbnail" src="sonic.JPG" alt="name">
+            </div>
+            <div class="column right">
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star" style="color: orange"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <a href="movie.html">
+                    <h3 class="movieName">Sonic (2020)</h3>
+                </a>
                 <h5><b>Genre:</b> <span class="movieGenre">Family</span></h5>
                 <h5 class="movieBlurb">Sonic tries to navigate the complexities of life on Earth with his newfound best friend -- a human named Tom Wachowski. They must soon join forces to prevent the evil Dr. Robotnik from capturing Sonic and using his powers for world domination.</h5>
             </div>
         </div>
-        <div class="row">
-            <div class="column left">
-                <img class="moviePic" src="conjuring.JPG" alt="name">
-            </div>
-            <div class="column right">
-                <h3 class="movieName">The Conjuring</h3>
-                <h5><b>Genre:</b> <span class="movieGenre">Horror</span></h5>
-                <h5 class="movieBlurb">Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.</h5>s
-            </div>
-        </div>
-
     </div>
 
 </body>

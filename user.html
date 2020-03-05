@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Jason Chen (jc4rn) and Cody Miller (cm2gp) -->
+
     <meta charset="UTF-8">
     <title>User Page</title>
     <link rel="stylesheet" href="css/style.css">
@@ -89,15 +91,15 @@
             <h3><b>Age:</b> <span id="age">10</span></h3>
             <h3><b>Favorite Movie:</b> <span id="favMovie">Movie Name</span></h3>
             <h3><b>Favorite Movie Star:</b> <span id="favStar">Movie Star</span></h3>
-            <h3 id="userBlurb">I am doggo that does movie review. Am very good, trust my reviews.</h3></h2>
+            <h3 id="userBlurb">I am doggo that does movie review. Am very good, trust my reviews.</h3>
         </div>
     </div>
 
     <!-- Movie Section -->
     <div class="tabs">
-        <button class="tablinks" onclick="openList(reviewed)" id="defaultOpen">Reviewed Movies</button>
-        <button class="tablinks" onclick="openList(saved)">Saved Movies</button>
-        <button class="tablinks" onclick="openList(created)">Movie Entries</button>
+        <button class="tablinks" id="defaultOpen">Reviewed Movies</button>
+        <button class="tablinks">Saved Movies</button>
+        <button class="tablinks">Movie Entries</button>
         <button type="buttton" id="entry" data-toggle="modal" data-target="#createEntryModal">Add Movie Entry</button>
     </div>
 

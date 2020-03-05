@@ -1,10 +1,12 @@
+<!-- Jason Chen (jc4rn) and Cody Miller (cm2gp) -->
+
+window.onload = function() {
+    let input = document.getElementById("inputUser").focus();
+}
+
 function checkLogin(info){
 		if(info.user.value == "student" &&info.pass.value=="password"){
 			location.href="user.html"
-
-		}
-		else{
-			alert("fail");
 		}
 }
 

@@ -1,8 +1,19 @@
+/*Jason Chen (jc4rn) and Cody Miller (cmp2gp)*/
 body {
     font-family: sans-serif;
     padding: 0px;
     margin: 0px;
 }
+
+a {
+    text-decoration: none !important;
+}
+
+#signup a {
+    color: white;
+}
+
+
 .top {
     top: 0;
     background-color: lightblue;
@@ -87,11 +98,9 @@ ul {
 .left {
     width: 30%;
     text-align: center;
-    padding-top: 3%;
 }
 
 .right {
-    padding-top: 3%;
     width: 70%;
 }
 
@@ -101,7 +110,7 @@ ul {
     clear: both;
 }
 
-.profilePic {
+.profilePic, .moviePic {
     width: 250px;
     height: 400px;
     border: 3px solid black;
@@ -172,14 +181,14 @@ ul {
     border-radius: 20px;
     margin-bottom: 2%;
 }
-.moviePic {
+.moviePicThumbnail {
     width: 125px;
     height: 200px;
     border: 3px solid;
 }
 
-.movieBlurb {
-    padding-right: 1%;
+.movieBlurb #userBlurb, #summary {
+    padding-right: 10%;
 }
 
 .container {
@@ -188,6 +197,10 @@ ul {
   border-radius: 5px;
   padding: 16px;
   margin: 16px 0;
+}
+
+#sortRating {
+    display: none;
 }
 
 /* Clear floats after containers */
@@ -221,4 +234,24 @@ ul {
     float: none;
     display: block;
   }
+
+  .left {
+      width: 100%;
+  }
+
+  .right {
+      width: 100%;
+      margin-left: 2%;
+  }
+
+    #filter-sort {
+        margin-top: 1%;
+        float: right;
+        font-size: 15px;
+    }
+
+    .movieBlurb {
+        display: none;
+    }
+
 }

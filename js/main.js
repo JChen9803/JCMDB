@@ -1,3 +1,54 @@
+<!-- Jason Chen (jc4rn) and Cody Miller (cm2gp) -->
+
+window.onload = function() {
+    document.getElementById("inputSort").onchange = function() {
+        if (document.getElementById("inputSort").value == "newest") {
+            document.getElementById("sortNewest").style.display = "block";
+            document.getElementById("sortRating").style.display = "none";
+        }
+        else {
+            document.getElementById("sortRating").style.display = "block";
+            document.getElementById("sortNewest").style.display = "none";
+        }
+    };
+}
+
+function searchMovies() {
+    let val = document.getElementById("search").value;
+    if(val == "") {
+        document.getElementsByClassName("sonicMovie")[0].style.display = "block";
+        document.getElementsByClassName("sonicMovie")[1].style.display = "block";
+        document.getElementsByClassName("jokerMovie")[0].style.display = "block";
+        document.getElementsByClassName("jokerMovie")[1].style.display = "block";
+        document.getElementsByClassName("conjuringMovie")[0].style.display = "block";
+        document.getElementsByClassName("conjuringMovie")[1].style.display = "block";
+    }
+    if (("sonic").includes(val.toLowerCase())) {
+            document.getElementsByClassName("sonicMovie")[0].style.display = "block";
+            document.getElementsByClassName("sonicMovie")[1].style.display = "block";
+            document.getElementsByClassName("jokerMovie")[0].style.display = "none";
+            document.getElementsByClassName("jokerMovie")[1].style.display = "none";
+            document.getElementsByClassName("conjuringMovie")[0].style.display = "none";
+            document.getElementsByClassName("conjuringMovie")[1].style.display = "none";
+    }
+    if (("joker").includes(val.toLowerCase())) {
+        document.getElementsByClassName("sonicMovie")[0].style.display = "none";
+        document.getElementsByClassName("sonicMovie")[1].style.display = "none";
+        document.getElementsByClassName("jokerMovie")[0].style.display = "block";
+        document.getElementsByClassName("jokerMovie")[1].style.display = "block";
+        document.getElementsByClassName("conjuringMovie")[0].style.display = "none";
+        document.getElementsByClassName("conjuringMovie")[1].style.display = "none";
+    }
+    if (("the conjuring").includes(val.toLowerCase())) {
+        document.getElementsByClassName("sonicMovie")[0].style.display = "none";
+        document.getElementsByClassName("sonicMovie")[1].style.display = "none";
+        document.getElementsByClassName("jokerMovie")[0].style.display = "none";
+        document.getElementsByClassName("jokerMovie")[1].style.display = "none";
+        document.getElementsByClassName("conjuringMovie")[0].style.display = "block";
+        document.getElementsByClassName("conjuringMovie")[1].style.display = "block";
+    }
+}
+
 function movieValidation() {
     var movieTitle = document.getElementById("inputMovieTitle").value;
     var year = document.getElementById("inputYear").value;
@@ -6,7 +57,6 @@ function movieValidation() {
     var directors = document.getElementById("inputDirectors").value;
     var summary = document.getElementById("inputSummary").value;
 
-    console.log("year" + year.length)
     let valid = true;
 
     if(movieTitle == "") {
